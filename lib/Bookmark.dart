@@ -1,12 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-// import 'package:news_app/News.dart';
 import 'package:news_app/cardModel.dart';
 import 'package:flutter_swiper_plus/flutter_swiper_plus.dart';
-import 'package:http/http.dart' as http;
 import 'package:news_app/SwipeCard.dart';
-import 'package:news_app/cardModel.dart';
+import 'package:news_app/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class BookmarkPage extends StatefulWidget {
   const BookmarkPage({super.key, required this.title});
@@ -67,6 +65,13 @@ class _BookmarkPageState extends State<BookmarkPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          IconButton(onPressed: (){
+            MyApp.themeNotifier.value=MyApp.themeNotifier.value==ThemeMode.light?ThemeMode.dark:ThemeMode.light;
+          },
+              icon:Icon(MyApp.themeNotifier.value==ThemeMode.light?Icons.dark_mode:Icons.light_mode)
+          )
+        ],
       ),
       body: cards.length == 0 ? Center(child: Text("error occured!"),) : SingleChildScrollView(
         child: Column(
