@@ -31,7 +31,6 @@ class _SearchPageState extends State<SearchPage> {
       setState(() {
         var mappedResp=json.decode(response.body);
         final List<dynamic> jsonData=mappedResp['news'];
-        print(jsonData);
         cards = jsonData.map((json) => CardModel.fromJson(json)).toList();
 
       });

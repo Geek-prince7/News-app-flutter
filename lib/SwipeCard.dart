@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:news_app/cardModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class SwipeCard extends StatelessWidget {
@@ -63,8 +62,6 @@ class SwipeCard extends StatelessWidget {
                       if(news!=null){
                         // final newsObject=jsonDecode(news);
                         await prefs.remove("data-"+card.id);
-
-
                         const snack=SnackBar(content: Text("removed"),);
                         ScaffoldMessenger.of(context).showSnackBar(snack);
                       }
@@ -74,12 +71,6 @@ class SwipeCard extends StatelessWidget {
                         const snack=SnackBar(content: Text("saved"),);
                         ScaffoldMessenger.of(context).showSnackBar(snack);
                       }
-
-
-                      // print('message ------------------- ${msg}');
-
-
-
                     }, child: Icon(Icons.bookmark,color: Colors.blue,size: 35,),)
                   ],
                 ),

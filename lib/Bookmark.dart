@@ -20,25 +20,6 @@ class _BookmarkPageState extends State<BookmarkPage> {
   String keywords="";
 
   Future<void> callAPI()async{
-    // http.Response response;
-    //
-    // final prefs=await SharedPreferences.getInstance();
-    // prefs.setString("token", "TkTN5N_Vo2eHqbXpyu2P5r3Xw0YNkib8QEWrqmVkMIf3YV9J");
-    // String key=keywords==""?"":"&keywords="+keywords;
-    // String url='https://api.currentsapi.services/v1/search?apiKey=${prefs.getString('token')}'+key;
-    // response=await http.get(Uri.parse(url));
-    // if(response.statusCode==200){
-    //   setState(() {
-    //     var mappedResp=json.decode(response.body);
-    //     final List<dynamic> jsonData=mappedResp['news'];
-    //     print(jsonData);
-    //     cards = jsonData.map((json) => CardModel.fromJson(json)).toList();
-    //
-    //   });
-    // }
-    // else{
-    //   print("failed");
-    // }
     final prefs=await SharedPreferences.getInstance();
     Set<String> keys=prefs.getKeys();
     // List<CardModel> mycard=[];
@@ -55,8 +36,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
       }
 
     }
-    print("-------********************************------------------");
-    print(cards);
+
     setState(() {
 
     });
