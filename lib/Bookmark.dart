@@ -22,7 +22,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
     Set<String> keys=prefs.getKeys();
     // List<CardModel> mycard=[];
     for(var key in keys){
-      if(key!="token")
+      if(key.contains('data-'))
       {
         String? val=prefs.getString(key);
         if(val!=null){

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:news_app/Drawer.dart';
 import 'package:news_app/cardModel.dart';
 import 'package:flutter_swiper_plus/flutter_swiper_plus.dart';
 import 'package:http/http.dart' as http;
@@ -107,6 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
+      drawer: const PersistDrawer(),
       bottomNavigationBar: Container(
         height: 60,
 

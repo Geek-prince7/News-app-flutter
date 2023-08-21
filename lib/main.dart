@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/Bookmark.dart';
 import 'package:news_app/Home.dart';
+import 'package:news_app/Login.dart';
 import 'package:news_app/Search.dart';
 
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(valueListenable: themeNotifier, builder: (_,ThemeMode currentMode,__){
       return MaterialApp(
-        title: 'Flutter Demo',
+        title: 'NewsX',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
           "search":(context)=>SearchPage(title:"Search"),
           "home":(context)=>MyHomePage(title: "Latest News"),
           "bookmark":(context)=>BookmarkPage(title:"Saved"),
+          "login":(context)=>LoginPage(),
         },
       );
 
